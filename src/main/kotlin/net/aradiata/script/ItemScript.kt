@@ -1,0 +1,24 @@
+package net.aradiata.script
+
+import net.aradiata.Rarity
+import net.aradiata.ItemType
+
+inline fun item(id: String, builder: ItemBuilder.() -> Unit): {
+    return ItemBuilder(id).apply(builder)
+}
+
+class ItemBuilder(val id: String) {
+
+    var name: String = "null"
+    var rarity: Rarity = Rarity.Common
+    var type: ItemType = ItemType.Resource
+    
+}
+
+fun test() {
+    item("cool-item") {
+        name = "Cool Item"
+        rarity = Rarity.Divine
+        type = ItemType.Weapon
+    }
+}
