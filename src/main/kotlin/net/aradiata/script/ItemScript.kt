@@ -1,9 +1,9 @@
 package net.aradiata.script
 
-import net.aradiata.item.Rarity
-import net.aradiata.item.ItemType
+import net.aradiata.item.stats.ItemType
+import net.aradiata.item.stats.Rarity
 
-inline fun item(id: String, builder: ItemBuilder.() -> Unit): {
+inline fun item(id: String, builder: ItemBuilder.() -> Unit): ItemBuilder {
     return ItemBuilder(id).apply(builder)
 }
 
@@ -12,7 +12,6 @@ class ItemBuilder(val id: String) {
     var name: String = "null"
     var rarity: Rarity = Rarity.Common
     var type: ItemType = ItemType.Resource
-    
 }
 
 fun test() {
