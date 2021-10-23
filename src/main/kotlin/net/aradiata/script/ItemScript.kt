@@ -1,7 +1,7 @@
 package net.aradiata.script
 
-import net.aradiata.Rarity
-import net.aradiata.ItemType
+import net.aradiata.item.Rarity
+import net.aradiata.item.ItemType
 
 inline fun item(id: String, builder: ItemBuilder.() -> Unit): {
     return ItemBuilder(id).apply(builder)
